@@ -9,7 +9,7 @@ export default function Todo(props) {
           if(inputValue === "") alert("The input cannot be empty");
           else alert("All perfect!");
         };
-    
+    // Sick Code, dude!
   
     return (
     //Some html code should go here
