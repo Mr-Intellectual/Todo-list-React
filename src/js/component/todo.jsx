@@ -4,18 +4,31 @@ import PropTypes from 'prop-types';
 export default function Todo(props) {
    
     const [inputValue, setInputValue] = React.useState("");
+    const [todos, setTodos] = React.useState([]);
         
-        const validateInput = () => {
-          if(inputValue === "") alert("The input cannot be empty");
-          else alert("All perfect!");
+        const trashIcon = () => {
+          if(inputValue === "") {
+            alert("The input cannot be empty");
+          }
+          else {
+            alert("Trash");
+          }
+        };
+        const checkIcon = () => {
+          if(inputValue === "") { 
+            alert("The input cannot be empty");
+          }
+          else {
+            alert("Check");
+          }
         };
     
   
     return (
     //Some html code should go here
     <div class="input-group mb-3">
-    <button class="btn btn-outline-success text-success" type="button">
-    <i class="fa-light fa-square-check"></i>
+    <button onClick={checkIcon} class="btn btn-outline-success text-success" type="button">
+    <i class="fa-regular fa-square-check"></i>
     </button>
     <input
       type="text"
@@ -24,7 +37,7 @@ export default function Todo(props) {
       aria-label="Example text with two button addons"
       onChange={e => setInputValue(e.target.value)} value={inputValue} 
       />
-    <button onClick={validateInput} class="btn btn-outline-danger text-danger" type="button">
+    <button onClick={trashIcon} class="btn btn-outline-danger text-danger" type="button">
     <i class="fa-regular fa-trash-can"></i>
     </button>
   </div>
